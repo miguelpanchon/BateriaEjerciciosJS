@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- favicon pedido como sugerencia por el profe -->
+  <link rel="icon" type="image/ico" href="./favicon.ico" />
+
+  <!-- habilitar media queries y responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Normalizar = "resetear los browser specific styles" -->
+  <link rel="stylesheet" href="./CSS/1-normalize.css">
+
+  <!-- Formatos (colores, tamaños, etc) -->
+  <link rel="stylesheet" href="./CSS/2-styles.css">
+
+  <!-- las media queries que se vayan a considerar en el proyecto -->
+  <link rel="stylesheet" href="./3-layout-mobile.css">
+  <link rel="stylesheet" href="./4-layout-mobile-plus.css">
+  <link rel="stylesheet" href="./5-layout-tablet.css">
+  <link rel="stylesheet" href="./6-layout-pc.css">
+
+  <!-- <script src="./productsData.js"></script>
+  <script src="./Fhighestprice.js"></script>
+  <script src="./FpaintProducts.js"></script>
+  <script src="./FpaintFilters.js" defer></script>
+  <script src="./FremoveFilters.js"></script>
+  <script src="./FremoveProducts.js"></script> -->
+  <script type="text/javascript" src="./main.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <title>MP-P2-Filtros-RtC</title>
+</head>
+
+<body>
+  <aside class="filters">
+    <h1>Ejercicios JS</h1>
+    <p>abre la consola para ir viendo los ejercicios resueltos</p>
+  </aside>
+
+  <main class="products">
+    <section>
+      <h3>Ejercicio 1:Enunciado </h3>
+
+      <p>1 Crea una arrow function que tenga dos parametros a y b y
+        que por defecto el valor de a = 10 y de b = 5. Haz que la función muestre
+        por consola la suma de los dos parametros.</p>
+
+      <ul>
+        <li>1.1 Ejecuta esta función sin pasar ningún parametro</li>
+        <li>1.2 Ejecuta esta función pasando un solo parametro</li>
+        <li> 1.3 Ejecuta esta función pasando dos parametros</li>
+      </ul>
+    </section>
+    <section>
+      <p></p>
+      <h3>Ejercicio 2:Enunciado </h3>
+      <ul>
+        <li>2.1 En base al siguiente javascript, crea variables en base a las propiedades
+          del objeto usando object destructuring e imprimelas por consola. Cuidado,
+          no hace falta hacer destructuring del array, solo del objeto.
+
+          const game = {title: 'The last us 2', gender: ['action', 'zombie', 'survival'], year: 2020}
+
+        </li>
+        <li>2.2 En base al siguiente javascript, usa destructuring para crear 3 variables
+          llamadas fruit1, fruit2 y fruit3, con los valores del array. Posteriormente
+          imprimelo por consola.
+
+          const fruits = ['Banana', 'Strawberry', 'Orange'];</li>
+        <li> 2.3 En base al siguiente javascript, usa destructuring para crear 2
+          variables igualandolo a la función e imprimiendolo por consola.
+
+          <p>const animalFunction = () GT {</p>
+          return {name: 'Bengal Tiger', race: 'Tiger'}
+          };
+        </li>
+        <li>2.4 En base al siguiente javascript, usa destructuring para crear las
+          variables name y itv con sus respectivos valores. Posteriormente crea
+          3 variables usando igualmente el destructuring para cada uno de los años
+          y comprueba que todo esta bien imprimiendolo.
+
+          const car = {name: 'Mazda 6', itv: [2015, 2011, 2020] }</li>
+      </ul>
+    </section>
+
+    <section>
+      <p></p>
+      <h3>Ejercicio 3:Enunciado </h3>
+      <ul>
+        <li> 3.1 Dado el siguiente array, crea una copia
+          usando spread operators.
+          const pointsList = [32, 54, 21, 64, 75, 43] </li>
+
+        <li> 3.2 Dado el siguiente objeto, crea una copia usando spread operators.
+          const toy = {name: 'Bus laiyiar', date: '20-30-1995',
+          color: 'multicolor'};</li>
+
+        <li> 3.3 Dado los siguientes arrays, crea un nuevo
+          array juntandolos usando
+          spread operatos.
+          const pointsList = [32, 54, 21, 64, 75, 43];
+          const pointsLis2 = [54,87,99,65,32]; </li>
+
+        <li> 3.4 Dado los siguientes objetos. Crea un nuevo objeto fusionando los dos
+          con spread operators.
+          const toy = {name: 'Bus laiyiar', date: '20-30-1995', color: 'multicolor'};
+          const toyUpdate = {lights: 'rgb', power:
+          ['Volar like a dragon', 'MoonWalk']}</li>
+
+        <li> 3.5 Dado el siguiente array. Crear una copia de él eliminando la posición 2
+          pero sin editar el array inicial. De nuevo, usando spread operatos.
+          const colors = ['rojo', 'azul', 'amarillo', 'verde', 'naranja'];</li>
+      </ul>
+    </section>
+    <section>
+      <p></p>
+      <h3>Ejercicio 4:Enunciado </h3>
+
+      <ul>4.1 Dado el siguiente array, devuelve un array con sus nombres
+        utilizando .map().
+        const users = [
+        {id: 1, name: 'Abel'},
+        {id:2, name: 'Julia'},
+        {id:3, name: 'Pedro'},
+        {id:4, name: 'Amanda'}
+        ];</ul>
+
+      <ul> 4.2 Dado el siguiente array, devuelve una lista que contenga los valores
+        de la propiedad .name y cambia el nombre a 'Anacleto' en caso de que
+        empiece por 'A'.
+        const users = [
+        {id: 1, name: 'Abel'},
+        {id:2, name: 'Julia'},
+        {id:3, name: 'Pedro'},
+        {id:4, name: 'Amanda'}
+        ];</ul>
+
+      <ul> 4.3 Dado el siguiente array, devuelve una lista que contenga los valores
+        de la propiedad .name y añade al valor de .name el string ' (Visitado)'
+        cuando el valor de la propiedad isVisited = true.
+        <p>const cities = [
+          {isVisited:true, name: 'Tokyo'},
+          {isVisited:false, name: 'Madagascar'},
+          {isVisited:true, name: 'Amsterdam'},
+          {isVisited:false, name: 'Seul'}
+          ];</p>
+      </ul>
+    </section>
+    <section>
+      <p></p>
+      <h3>Ejercicio 5:Enunciado </h3>
+      <ul>5.1 Dado el siguiente array, utiliza .filter() para generar un nuevo array
+        con los valores que sean mayor que 18
+        <p>const ages = [22, 14, 24, 55, 65, 21, 12, 13, 90];</p>
+      </ul>
+      <ul>
+        5.2 Dado el siguiente array, utiliza .filter() para generar un nuevo array
+        con los valores que sean par.
+        <p>const ages = [22, 14, 24, 55, 65, 21, 12, 13, 90];</p>
+      </ul>
+      <ul>5.3 Dado el siguiente array, utiliza .filter() para generar un nuevo array
+        con los streamers que tengan el gameMorePlayed = 'League of Legends'.
+        <p> const streamers = [
+          {name: 'Rubius', age: 32, gameMorePlayed: 'Minecraft'},
+          {name: 'Ibai', age: 25, gameMorePlayed: 'League of Legends'},
+          {name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},
+          {name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
+          ];</p>
+      </ul>
+      <ul>
+        5.4 Dado el siguiente array, utiliza .filter() para generar un nuevo array
+        con los streamers que incluyan el caracter 'u' en su propiedad .name. Recomendamos
+        usar la funcion .includes() para la comprobación.
+        <p>const streamers = [
+          {name: 'Rubius', age: 32, gameMorePlayed: 'Minecraft'},
+          {name: 'Ibai', age: 25, gameMorePlayed: 'League of Legends'},
+          {name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},
+          {name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
+          ];</p>
+      </ul>
+      <ul>
+        5.5 utiliza .filter() para generar un nuevo array con los streamers que incluyan
+        el caracter 'Legends' en su propiedad .gameMorePlayed. Recomendamos usar la funcion
+        .includes() para la comprobación.
+        Además, pon el valor de la propiedad .gameMorePlayed a MAYUSCULAS cuando
+        .age sea mayor que 35.
+      </ul>
+    </section>
+
+    <section>
+      <p></p>
+      <h3>Ejercicio 5.6:Enunciado </h3>
+      <p>(hasta que no metas un valor no se verá nada en consola)</p>
+      <ul>
+        Dado el siguiente javascript, utiliza .filter() para mostrar por consola
+        los streamers que incluyan la palabra introducida en el input.
+        <p> De esta forma, si
+          introduzco 'Ru' me deberia de mostrar solo el streamer 'Rubius'.</p>
+        <p> Si introduzco 'i', me deberia de mostrar el streamer 'Rubius' e 'Ibai'.</p>
+
+        <p>const streamers = [ </p>
+        <p>{name: 'Rubius', age: 32, gameMorePlayed: 'Minecraft'},</p>
+        <p>{name: 'Ibai', age: 25, gameMorePlayed: 'League of Legends'},</p>
+        <p>{name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},</p>
+        <p>{name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'} </p>
+        <p>];</p>
+
+        <input id="filterInput56" type="text" data-function="toFilterStreamers" value="" />
+        <p>(cada cambio, generará una console.table nueva)</p>
+      </ul>
+    </section>
+    <section>
+      <p></p>
+      <h3>Ejercicio 6.1:Enunciado </h3>
+      <p>6.1 Dado el siguiente array, usa .find() para econtrar el número 100.</p>
+      <p>const numbers = [32, 21, 63, 95, 100, 67, 43];</p>
+      <ul>
+
+      </ul>
+    </section>
+    <section>
+
+      <h3>Ejercicio 6.2:Enunciado </h3>
+
+      <p> 6.2 Dado el siguiente array, usa .find() para econtrar la pelicula del año 2010.</p>
+      <p>const movies = [
+        {title: 'Madagascar', stars: 4.5, date: 2015},
+        {title: 'Origen', stars: 5, date: 2010},
+        {title: 'Your Name', stars: 5, date: 2016}
+        ];</p>
+      <ul>
+
+      </ul>
+    </section>
+
+
+    <section>
+      <p></p>
+      <h3>Ejercicio 6.3:Enunciado </h3>
+      <p>6.3 Dado el siguiente javascript, usa .find() para econtrar el alien de nombre
+        'Cucushumushu' y la mutación 'Porompompero'. Una vez que los encuentres, usa
+        spread operator para fusionarlos teniendo en cuenta que el objeto de la mutación
+        lo queremos meter en la propiedad .mutation del objeto fusionado.
+
+      <p>const aliens = [ </p>
+      <p> {name: 'Zalamero', planet: 'Eden', age: 4029},</p>
+      <p> {name: 'Paktu', planet: 'Andromeda', age: 32},</p>
+      <p> {name: 'Cucushumushu', planet: 'Marte', age: 503021}</p>
+      ];</p>
+
+      <p> const mutations = [</p>
+      <p> {name: 'Porompompero', description: 'Hace que el alien pueda adquirir
+        la habilidad de tocar el tambor'},</p>
+      <p> {name: 'Fly me to the moon', description: 'Permite volar, solo y exclusivamente a la luna'},</p>
+      <p>{name: 'Andando que es gerundio', description: 'Invoca a un señor mayor como Personal Trainer'}</p>
+      <p>];</p>
+      <p></p>
+      <ul>
+
+      </ul>
+    </section>
+
+
+    <section>
+      <p></p>
+      <h3>Ejercicio 7:Enunciado </h3>
+      <p> 7.1 Dado el siguiente array, haz una suma de todos las notas de los examenes de
+        los alumnos usando la función .reduce().
+
+      <p>const exams = [</p>
+      {name: 'Yuyu Cabeza Crack', score: 5}, <br>
+      {name: 'Maria Aranda Jimenez', score: 1}, <br>
+      {name: 'Cristóbal Martínez Lorenzo', score: 6}, <br>
+      {name: 'Mercedez Regrera Brito', score: 7},<br>
+      {name: 'Pamela Anderson', score: 3},<br>
+      {name: 'Enrique Perez Lijó', score: 6},<br>
+      {name: 'Pedro Benitez Pacheco', score: 8},<br>
+      {name: 'Ayumi Hamasaki', score: 4},<br>
+      {name: 'Robert Kiyosaki', score: 2},<br>
+      {name: 'Keanu Reeves', score: 10}<br>
+
+
+      ];</p>
+      <p> 7.2 Dado el mismo array, haz una suma de todos las notas de los examenes de los
+        alumnos que esten aprobados usando la función .reduce().</p>
+      <p>7.3 calcular la media</p>
+      <ul>
+
+      </ul>
+    </section>
+    <section>
+      <p></p>
+      <h3>Ejercicio 8.1:Enunciado </h3>
+      <p>8.1 Dado el siguiente javascript filtra los videojuegos por gender = 'RPG' usando
+        .filter() y usa .reduce() para conseguir la media de sus .score.
+        La función .find() también podría ayudarte para el contrar el genero 'RPG' en el
+        array .gender.
+
+      <p> const videogames = [</p>
+      {name: 'Final Fantasy VII', genders: ['RPG'], score: 9.5}, <br>
+      {name: 'Assasins Creed Valhala', genders: ['Aventura', 'RPG'], score: 4.5},<br>
+      {name: 'The last of Us 2', genders: ['Acción', 'Aventura'], score: 9.8},<br>
+      {name: 'Super Mario Bros', genders: ['Plataforma'], score: 8.5},<br>
+      {name: 'Genshin Impact', genders: ['RPG', 'Aventura'], score: 7.5},<br>
+      {name: 'Legend of Zelda: Breath of the wild', genders: ['RPG'], score: 10},<br>
+      ] </p>
+      <p></p>
+      <ul>
+
+
+      </ul>
+    </section>
+    <section>
+      <p></p>
+      <h3>Ejercicio 9:Enunciado </h3>
+      <p>Dado el siguiente javascript usa forof para recorrer el array de películas,
+        genera un nuevo array con las categorías de las películas e imprime por
+        consola el array de categorías. Ten en cuenta que las categorías no deberían
+        repetirse.</p>
+      <p>Para filtrar las categorías puedes ayudarte de la función .includes().</p>
+      <ul>
+      </ul>
+    </section>
+
+    <section>
+      <p></p>
+      <h3>Ejercicio 10:Enunciado </h3>
+      <p>Dado el siguiente javascript usa forof y forin para hacer la media del
+        volumen de todos los sonidos favoritos que tienen los usuarios.</p>
+      <p></p>
+      <ul>
+      </ul>
+    </section>
+    <section>
+      <p></p>
+      <h3>Ejercicio 11:Enunciado </h3>
+      <p>Dado el siguiente javascript usa forof y forin para saber cuantas veces ha
+        sido cada sonido agregado por los usuarios a favorito.
+
+      </p>
+      <p>Para ello recorre la lista de usuarios y usa forin para recoger el nombre
+        de los sonidos que el usuario tenga como favoritos.
+
+        .</p>
+      <p>Una vez accedas a ellos piensa en la mejor forma de hacer un conteo de cada
+        vez que ese sonido se repita como favorito en cada usuario.
+
+      </p>
+      <p> Este ejercicio es un poco complicado con los conocimientos actuales pero...a
+        la vez un buen reto y oportunidad para comprender que hay muchas formas de
+        hacer las cosas en javascript</p>
+      <ul>
+      </ul>
+    </section>
+    <section>
+      <p></p>
+      <h3>Ejercicio 12:Enunciado </h3>
+      <p>Crea una función llamada findArrayIndex que reciba como parametros un array de textos y un texto y devuelve la
+        posición del array cuando el valor del array sea igual al valor del texto que enviaste como parametro.
+
+      </p>
+      <p> Haz varios ejemplos y compruebalos.</p>
+      <ul>
+      </ul>
+    </section>
+
+    <section>
+      <p></p>
+      <h3>Ejercicio 13:Enunciado </h3>
+      <p>Usando la función anterior beneficiate de poder conocer el indice del array
+        para crear una función llamada removeItem que pasandole un array y un texto
+        como parametros (los mismos parametros que en el anterior ejercicio) llame a
+        la función anteriormente creada findArrayIndex y obten el indice para
+        posteriormente usar la función de javascript .splice() para eliminar el
+        elemento del array.
+
+
+
+      </p>
+      <p> Finalmente retorna el array.</p>
+      <p>De nuevo haz varios ejemplos para practicar y comprueba que funcionan
+        correctamente.</p>
+      <ul>
+      </ul>
+    </section>
+
+    <section>
+      <p></p>
+      <h3>Ejercicio 14:Enunciado </h3>
+      <p>Crea una función llamada rollDice() que reciba como parametro el numero de caras
+        que queramos que tenga el dado que deberá simular el codigo (de tirar un dado) dentro de la función.
+      </p>
+      <p>Como hemos dicho, que la función use el parametro para simular una tirada de dado
+        y retornar el resultado. Si no se te ocurre como hacer un numero aleatorio no te
+        preocupes!</p>
+      <p> Busca información sobre la función de javascript Math.random()</p>
+      <ul>
+      </ul>
+    </section>
+
+    <section>
+      <p></p>
+      <h3>Ejercicio 15:Enunciado </h3>
+      <p>Crea una función llamada swap que reciba un array y dos parametros que sean
+        indices del array. <br>
+        La función deberá intercambiar la posición de los valores de
+        los indices que hayamos enviado como parametro. <br>
+        Retorna el array resultante.</p>
+      <p></p>
+      <ul>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+
+</html>
